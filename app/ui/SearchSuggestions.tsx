@@ -18,7 +18,7 @@ const SearchSuggestions = () => {
       {shuffledSuggestions.map(
         (suggestion: { name: string; type: string }, index: number) => {
           return (
-            <SearchSuggestionButton suggestion={suggestion} index={index} />
+            <SearchSuggestionButton suggestion={suggestion} key={index} index={index} />
           );
         }
       )}

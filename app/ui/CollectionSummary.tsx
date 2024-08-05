@@ -49,7 +49,7 @@ const CollectionSummary = () => {
         >
           <SortableContext items={items}>
             {items.map((item) => (
-              <CollectionItem item={item} />
+              <CollectionItem item={item} key={item.id} />
             ))}
           </SortableContext>
         </DndContext>
