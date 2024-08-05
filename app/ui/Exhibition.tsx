@@ -9,24 +9,16 @@ import Link from "next/link";
 const Exhibition = () => {
   const { items } = useCollection();
   return (
-    <>
+    <div>
+
       <div className="carousel w-full relative overflow-hidden h-screen">
+
+
+
         {items.map((item, index) => {
           const divId = index + 1;
           return (
-            <div key={item.id}>
-              <Link href="/search">
-                <button className="fixed top-5 right-5 ">
-                  <X size={36} />
-                </button>
-              </Link>
-              <div className="fixed top-5 left-5">
-                <Link href="/collection">
-                  <button className="btn border-1 border-slate-500 ">
-                    Edit collection
-                  </button>
-                </Link>
-              </div>
+            <>
               <div
                 key={divId}
                 id={`slide${divId}`}
@@ -56,11 +48,11 @@ const Exhibition = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </>
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 
