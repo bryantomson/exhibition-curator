@@ -24,7 +24,7 @@ interface Props {
   }
 
   function getClassName(index: number, buttonStyles: ButtonStyles): string {
-    const key = (index % Object.keys(buttonStyles).length) + 1; // Adjust index to map range
+    const key = (index % Object.keys(buttonStyles).length) + 1;
     return buttonStyles[key];
   }
 
@@ -43,7 +43,7 @@ const SearchSuggestionButton = ({suggestion, index}: Props) => {
  }
 
   return (
-    <div>
+    <div key={index}>
       
       <button
       onClick={handleSearchSuggestion}

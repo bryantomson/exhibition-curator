@@ -3,7 +3,7 @@
 import React, { ChangeEvent } from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
-const filterBy = () => {
+const FilterBy = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -95,4 +95,4 @@ const filterBy = () => {
  
 };
 
-export default filterBy;
+export default FilterBy;

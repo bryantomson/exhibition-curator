@@ -14,7 +14,7 @@ const Exhibition = () => {
         {items.map((item, index) => {
           const divId = index + 1;
           return (
-            <>
+            <div key={item.id}>
               <Link href="/search">
                 <button className="fixed top-5 right-5 ">
                   <X size={36} />
@@ -56,7 +56,7 @@ const Exhibition = () => {
                   </a>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </div>
