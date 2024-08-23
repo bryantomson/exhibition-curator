@@ -56,33 +56,35 @@ export default function SearchBox({ placeholder }: { placeholder: string }) {
   }, [searchParams]);
 
   return (
-    <div className="w-full ">
-      <div className="flex items-center">
-        <div className="mr-3 ml-3">
-          <Search />
+    <div className="w-full m-4">
+      <div className="w-full flex justify-center">
+        <div className="relative w-2/3">
+          <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 -translate-x-full mr-5">
+            <Search />
+          </div>
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="search" className="sr-only">
+              {placeholder}
+            </label>
+            <input
+              onChange={handleInputChange}
+              name="query"
+              className="input w-full input-bordered input-primary"
+              type="text"
+              placeholder={placeholder}
+              value={inputValue}
+              onFocus={() => setIsHighlighted(true)}
+              onBlur={() => {
+                setTimeout(() => {
+                  setIsHighlighted(false);
+                }, 200);
+              }}
+            />
+            <button type="submit" className="hidden">
+              Submit
+            </button>
+          </form>
         </div>
-        <label htmlFor="search" className="sr-only">
-          {placeholder}
-        </label>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <input
-            onChange={handleInputChange}
-            name="query"
-            className="input w-full max-w-[75%] input-bordered input-primary"
-            type="text"
-            placeholder={placeholder}
-            value={inputValue}
-            onFocus={() => setIsHighlighted(true)}
-            onBlur={() => {
-              setTimeout(() => {
-                setIsHighlighted(false);
-              }, 200);
-            }}
-          />
-          <button type="submit" className="hidden">
-            Submit
-          </button>
-        </form>
       </div>
       <div>
         <div

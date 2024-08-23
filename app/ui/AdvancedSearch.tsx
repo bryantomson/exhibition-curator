@@ -14,8 +14,8 @@ const AdvancedSearch = () => {
   };
 
   return (
-    <div className="w-full max-w-[50%] "> 
-      <div className="collapse  bg-base-200 ">
+    <div className="w-2/3  mb-4 "> 
+      <div className="collapse  bg-base-100 ">
         <input
           type="checkbox"
           checked={isChecked}
@@ -30,7 +30,7 @@ const AdvancedSearch = () => {
           )}
         </div>
 
-        <div className="collapse-content flex justify-between ">
+        <div className="collapse-content flex justify-between">
           <SearchBy />
           <SourcePicker />
           <YearRangePicker />

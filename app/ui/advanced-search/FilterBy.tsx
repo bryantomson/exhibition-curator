@@ -11,7 +11,6 @@ const FilterBy = () => {
   const params = new URLSearchParams(searchParams);
   const currentFilters = params.get("filter");
   const currentFiltersArray = currentFilters ? currentFilters.split("|") : [];
-  console.log("Current filters:", currentFiltersArray);
 
 
 
@@ -28,13 +27,12 @@ const FilterBy = () => {
       .map((checkbox) => checkbox.value)
       .filter((value) => value !== "on");
 
-    console.log("Checked values:", filterValues);
     const validFilterValues = ["artist", "title", "style"];
     const filteredValues = filterValues.filter((value) =>
       validFilterValues.includes(value)
     );
 
-    console.log("Filtered values:", filteredValues);
+  
 
     params.delete("filter"); // Remove the existing "filter" param
 

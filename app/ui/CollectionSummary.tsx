@@ -5,7 +5,7 @@ import React from "react";
 import CollectionItem from "./CollectionItem";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
-import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
+import { restrictToVerticalAxis, restrictToWindowEdges } from "@dnd-kit/modifiers";
 
 interface Artwork {
   id: string;
@@ -28,6 +28,7 @@ const CollectionSummary = () => {
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
 
+
     if (over && active.id !== over.id) {
       const oldIndex = items.findIndex((item) => item.id === active.id);
       const newIndex = items.findIndex((item) => item.id === over.id);
@@ -40,20 +41,17 @@ const CollectionSummary = () => {
   
 
   return (
-    <div className="w-full">
-      <div className="">
-        <h1 className="text-xl text-accent font-bold">My Collection</h1>
-        <DndContext
-          modifiers={[restrictToVerticalAxis]}
-          onDragEnd={handleDragEnd}
-        >
-          <SortableContext items={items}>
-            {items.map((item) => (
-              <CollectionItem item={item} key={item.id} />
-            ))}
-          </SortableContext>
-        </DndContext>
-      </div>
+    <div className="">
+      <DndContext
+        modifiers={[restrictToVerticalAxis, restrictToWindowEdges]}
+        onDragEnd={handleDragEnd}
+      >
+        <SortableContext items={items}>
+          {items.map((item) => (
+            <CollectionItem item={item} key={item.id} />
+          ))}
+        </SortableContext>
+      </DndContext>
     </div>
   );
 };

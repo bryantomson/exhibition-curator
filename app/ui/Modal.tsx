@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import AddCollectionButton from "./AddCollectionButton";
 
 interface Artwork {
-    id: string;
+  id: string;
   artist: string;
   title: string;
   description: string;
@@ -24,7 +24,7 @@ const Modal = ({ artwork }: { artwork: Artwork }) => {
     setIsChecked(!isChecked);
   };
   return (
-    <div className="relative w-full h-full bg-slate-600">
+    <div className="relative w-full h-full bg-base-200">
       <img
         className="w-full h-full object-contain"
         src={artwork.image_url}
@@ -32,7 +32,11 @@ const Modal = ({ artwork }: { artwork: Artwork }) => {
       />
       <div className=" absolute inset-0 flex flex-col items-center justify-end text-white bg-drop-shadow-lg  overflow-auto">
         <div className="collapse bg-base-200/50 w-full mb-0">
-          <input className="max-w-[50%]"type="checkbox" onChange={handleInputChange} />
+          <input
+            className="max-w-[50%]"
+            type="checkbox"
+            onChange={handleInputChange}
+          />
           <div className="collapse-title text-xl font-medium">
             <h1 className="text-2xl font-bold mb-2">{artwork.title}</h1>
             <h2 className="text-xl font-semibold mb-4">{artwork.artist}</h2>

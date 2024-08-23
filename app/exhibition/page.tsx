@@ -5,11 +5,6 @@ import { X } from "lucide-react";
 const page = () => {
   return (
     <div className="h-screen">
-      <a
-        href="/search"
-      >
-        <X size={36} />
-      </a>
       <Exhibition />
     </div>
   );

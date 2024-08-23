@@ -40,7 +40,6 @@ const YearRangePicker: React.FC = () => {
       params.delete("toYear");
     } else {
       setError("");
-      console.log("Years are valid");
       params.set("fromYear", from);
       params.set("toYear", to);
     }

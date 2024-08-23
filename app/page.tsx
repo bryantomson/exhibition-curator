@@ -8,7 +8,7 @@ export default function Home() {
         backgroundImage: "url(/hero.png)",
       }}
     >
-      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-overlay bg-black bg-opacity-60 "></div>
       <div className="hero-content  text-white text-center">
         <div className="max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-4xl">
           <h1 className="mb-5 text-5xl font-bold">Curate an exhibition</h1>

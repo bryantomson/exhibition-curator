@@ -1,10 +1,11 @@
 import React, { Suspense } from "react";
 import SearchResultTable from "../ui/SearchResultTable";
-import SearchOptions from "../ui/AdvancedSearch";
+import AdvancedSearch from "../ui/AdvancedSearch";
 import StartExhibitionButton from "../ui/StartExhibitionButton";
 import CollectionDrawer from "../ui/CollectionDrawer";
 import NavBar from "../ui/NavBar";
 import SearchBox from "@/app/ui/SearchBox";
+
 
 const SearchPage = async ({
   searchParams,
@@ -33,16 +34,16 @@ const SearchPage = async ({
   return (
     <>
       <NavBar />
-      <div className="fixed top-0 right-0 z-50">
+      <div className="fixed top-3 right-2 z-50">
         <CollectionDrawer />
       </div>
 
-      <h1 className="text-4xl  text-center font-semibold m-3 drop-shadow-sm ">
-        Search artworks to add to your collection.
+      <h1 className="text-4xl  text-center font-semibold m-10 drop-shadow-sm ">
+     Search artworks to add to your collection.
       </h1>
-      <div className="flex flex-col items-left justify-left ">
+      <div className="flex flex-col  items-center ">
         <SearchBox placeholder="Search paintings by artist, style etc..."></SearchBox>
-        <SearchOptions />
+        <AdvancedSearch />
       </div>
 
       <div>

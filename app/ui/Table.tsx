@@ -81,7 +81,6 @@ const Table: React.FC<TableProps> = ({
   function showNextItem(direction: string) {
     if (!artworks.length || !currentArtwork) return;
 
-    console.log("HELLO");
 
     const currentIndex = artworks.indexOf(currentArtwork);
 
@@ -136,26 +135,7 @@ const Table: React.FC<TableProps> = ({
             >
               {currentArtwork && <Modal artwork={currentArtwork} />}
 
-              <div
-                onClick={() => {
-                  if (currentArtwork)
-                    console.log(
-                      artworks.indexOf(currentArtwork),
-                      artworks.length - 1
-                    );
-                }}
-              ></div>
-              <div className="absolute align-middle">
-                {currentArtwork &&
-                artworks.indexOf(currentArtwork) === artworks.length - 1 ? (
-                  <LoadMoreButton
-                    onClick={loadMoreArtworks}
-                    showNext={showNextItem}
-                  />
-                ) : (
-                  ""
-                )}
-              </div>
+       
               <button className=" absolute top-2 right-2" onClick={closeModal}>
                 <IoMdClose className="text-2xl	" />
                 <span className="sr-only">Close</span>
@@ -181,7 +161,7 @@ const Table: React.FC<TableProps> = ({
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {artworks.map((result) => {
             return (
-              <div key={result.id} className=" bg-base-100 grid gap-4 ">
+              <div key={result.id} className=" bg-base-200 grid gap-4 group ">
                 <div className="cursor-pointer h-auto max-w-full rounded-lg">
                   <img
                     onClick={() => {
@@ -192,7 +172,7 @@ const Table: React.FC<TableProps> = ({
                     src={result.image_url}
                     alt={result.image_alt}
                   />
-                  <div className="flex-col ">
+                  <div className="flex-col max-w-[100%] p-1">
                     <p className="text-lg truncate max-w-[300px]">
                       {result.title}
                     </p>
@@ -200,11 +180,13 @@ const Table: React.FC<TableProps> = ({
                       {result.artist}
                     </p>
 
-                    <p className="text-secondary">{result.date}</p>
-                    <p className="text-info pt-2">{result.style && result.style}</p>
+                    <p className="text-neutral">{result.date}</p>
+                    <p className="text-info pt-2">
+                      {result.style && result.style}
+                    </p>
 
                     <div className="flex justify-end">
-                      <div>
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <AddCollectionButton artwork={result} />
                       </div>
                     </div>

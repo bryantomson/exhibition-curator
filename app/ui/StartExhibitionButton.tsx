@@ -14,8 +14,8 @@ const StartExhibitionButton = () => {
     return (
       <div className="toast toast-center">
         <Link href="/exhibition">
-          <div className="btn btn-accent border-1 border-slate-400 p-4 pl-8 pr-8 transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200">
-            <span>Start Exhibition ➤</span>
+          <div className="btn btn-primary border-1 border-base-200 p-4 pl-8 pr-8 transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200">
+            <span >Start Exhibition ➤</span>
           </div>
         </Link>
       </div>

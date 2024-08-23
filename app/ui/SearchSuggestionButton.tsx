@@ -12,11 +12,11 @@ interface Props {
 }
 
   const buttonStyles = {
-    1: "neutral",
-    2: "primary",
-    3: "secondary",
-    4: "accent",
-    5: "ghost",
+    "1": "primary",
+    "2": "secondary",
+    "3": "neutral",
+    "4": "info",
+    "5": "accent",
   };
 
   interface ButtonStyles {
@@ -25,6 +25,7 @@ interface Props {
 
   function getClassName(index: number, buttonStyles: ButtonStyles): string {
     const key = (index % Object.keys(buttonStyles).length) + 1;
+
     return buttonStyles[key];
   }
 
@@ -44,7 +45,7 @@ const SearchSuggestionButton = ({suggestion, index}: Props) => {
 
   return (
     <div key={index}>
-      
+    
       <button
       onClick={handleSearchSuggestion}
         className={`whitespace-nowrap w-fit px-4 py-2 flex gap-x-2  btn  btn-xs m-1 btn-${getClassName(

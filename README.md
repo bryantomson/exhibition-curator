@@ -4,7 +4,7 @@ An interactive application for curating and managing art exhibitions.
 
 ## Live Demo
 
-Visit the live application: [Exhibition Curator](https://exhibition-curator-qph72eavg-tom-brysons-projects.vercel.app/)
+Visit the live application: [Exhibition Curator](exhibition-curator-kohl.vercel.app/)
 
 ## Features
 
@@ -26,18 +26,23 @@ cd exhibition-curator
 
 3. Install dependencies:
 
-npm install
+`npm install`
 
 4. Start the development server:
 
-npm run dev
+`npm run dev`
 
 
 5. Open your browser and visit `http://localhost:3000`
 
 ## Usage
 
-[Add brief instructions on how to use the main features of your app]
+- Use the search page to search for artworks
+- Click on individual artwork search results to expand view and see more information
+- Add artworks to a collection via the 'Add to Collection' button on each search results
+- Use the 'View Collection' button in the main navigation to see your collection, and use the buttons to re-order or remove items
+- Use the "Start Exhibition" button to see your collection as an exhibition
+- Inside the exhibition, use the Show Info button to display artwork information and descriptions
 
 ## Libraries and frameworks used
 

@@ -35,12 +35,15 @@ const CollectionItem = ({ item }: Props) => {
     transition,
   };
 
+
+ 
+
   return (
     <div
       ref={setNodeRef}
       style={style}
       key={item.id}
-      className={`bg-slate-800 m-2 flex ${imageHeight} container  text-xs items-center`}
+      className={`bg-base-300 m-2 flex ${imageHeight} w-container  text-xs items-center`}
     >
       <div className="aspect-[1/1] overflow-hidden h-full w-auto flex-shrink-0 sticky left-0 ">
         <img
@@ -51,16 +54,16 @@ const CollectionItem = ({ item }: Props) => {
       </div>
       <div className="w-full m-2 align-center overflow-hidden whitespace-nowrap text-ellipsis ">
         <p className="text-base p-0.5 font-semibold">{item.title}</p>
-       
+
         <p className="text-sm p-0.5">{item.artist}</p>
-        <p className="text-xs p-0.5 text-slate-400">{item.style}</p>
+        <p className="text-xs p-0.5 text-info">{item.style}</p>
       </div>
       <button
-        {...attributes}
-        {...listeners}
         className="cursor-move tooltip tooltip-left"
         data-tip="Drag to reorder artworks"
         aria-label="drag-item"
+        {...attributes}
+        {...listeners}
       >
         <Grip />
       </button>
@@ -70,7 +73,7 @@ const CollectionItem = ({ item }: Props) => {
         data-tip="Remove artwork from collection"
         onClick={() => removeItem(item.id)}
       >
-        <CircleMinus className="text-red-400 m-2  sticky right-0" />
+        <CircleMinus className="text-accent m-2  sticky right-0" />
       </button>
     </div>
   );
