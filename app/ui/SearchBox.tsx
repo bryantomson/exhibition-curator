@@ -17,6 +17,11 @@ export default function SearchBox({ placeholder }: { placeholder: string }) {
   const [inputValue, setInputValue] = useState(searchParams.get("query") || "");
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    const query = searchParams.get('query') || '';
+    setInputValue(query);
+  }, [searchParams]);
+
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams);
